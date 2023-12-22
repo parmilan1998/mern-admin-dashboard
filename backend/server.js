@@ -3,6 +3,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const dotenv = require('dotenv').config()
+const UserRoute = require('./routes/UserRoute.js')
 
 // initialize an instance of the Express application
 const app = express()
@@ -13,11 +14,14 @@ app.use(bodyParser.json())
 
 // Route configuration
 app.get('/', (req, res) => {
-  res.send('Home Page!...')
+  res.send('API is running!......')
 })
 
+// Routes Middlware
+app.use('/api/users', UserRoute)
+
 // Set up the PORT environment
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 8000
 
 // Connect the mongodb database
 mongoose
