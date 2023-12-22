@@ -22,3 +22,7 @@
 6. Express:  
     Express is a popular web application framework for Node.js. 
     It simplifies the process of building robust web applications by providing a set of features for routing, middleware, and HTTP utilities.
+
+7. express-async-handler
+    It is a utility library for handling asynchronous errors in Express.js middleware and route handlers. 
+    It simplifies the process of dealing with asynchronous functions and helps avoid repetitive error-handling code

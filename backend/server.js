@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const dotenv = require('dotenv').config()
 const UserRoute = require('./routes/UserRoute.js')
+const errorHandler = require('./middleware/errorMiddleware')
 
 // initialize an instance of the Express application
 const app = express()
@@ -16,6 +17,9 @@ app.use(bodyParser.json())
 app.get('/', (req, res) => {
   res.send('API is running!......')
 })
+
+// Error middleware
+app.use(errorHandler)
 
 // Routes Middlware
 app.use('/api/users', UserRoute)
