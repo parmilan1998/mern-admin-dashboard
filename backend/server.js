@@ -11,6 +11,7 @@ const app = express()
 
 // Middleware configuration
 app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // Route configuration

@@ -13,7 +13,7 @@ const registerUser = asyncHandler(async (req, res) => {
   // Password must contain at least 6 characters
   if (password.length < 6) {
     res.status(400)
-    throw new Error('Password must contain up at least 6 characters')
+    throw new Error('Password must contain at least 6 characters')
   }
 
   //Check weather user email already exists
@@ -39,6 +39,9 @@ const registerUser = asyncHandler(async (req, res) => {
       phone_no,
       bio,
     })
+  } else {
+    res.status(400)
+    throw new Error('Invalid user data')
   }
 })
 
